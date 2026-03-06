@@ -11,318 +11,332 @@
     />
   </head>
   <body>
-<div class="wrapper">
+    <div class="wrapper">
       <div class="overlay"></div>
-    <div class="main">
-      <main id="input-field">
-        <form id="form-reg">
-          <h2>Student Registration</h2>
+      <div class="main">
+        <main id="input-field">
+          <form id="form-reg">
+            <h2>Student Registration</h2>
 
-          <div class="section">
-            <h5>Personal Details</h5>
-            <div>
-              <div class="form-group">
-                <i class="fa-solid fa-user"></i>
-                <input type="text" placeholder="Full Name" id="name" />
-              </div>
-              <small class="error" id="nameError"></small>
-            </div>
-
-            <div class="row">
+            <div class="section">
+              <h5>Personal Details</h5>
               <div>
                 <div class="form-group">
-                  <i class="fa-solid fa-envelope"></i>
-                  <input type="text" placeholder="Email Address" id="email" />
+                  <i class="fa-solid fa-user"></i>
+                  <input type="text" placeholder="Full Name" id="name" />
                 </div>
-                <small class="error" id="emailError"></small>
+                <small class="error" id="nameError"></small>
               </div>
 
-              <div>
-                <div class="form-group">
-                  <i class="fa-solid fa-phone"></i>
-                  <input
-                    type="tel"
-                    placeholder="Phone Number"
-                    id="phone"
-                    maxlength="10"
-                  />
-                </div>
-                <small class="error" id="phoneError"></small>
-              </div>
-            </div>
-
-            <div class="row">
-              <div>
-                <label>Date of Birth</label>
-                <div class="form-group">
-                  <i class="fa-solid fa-calendar"></i>
-                  <input type="date" id="date" />
-                </div>
-                <small class="error" id="dateError"></small>
-              </div>
-
-              <div>
-                <div class="form-group radio-group">
-                  <label>Gender</label>
-                  <div class="gender-class">
-                    <label
-                      ><input type="radio" name="gender" value="male" />
-                      Male</label
-                    >
-                    <label
-                      ><input type="radio" name="gender" value="female" />
-                      Female</label
-                    >
-                    <label
-                      ><input type="radio" name="gender" value="other" />
-                      Other</label
-                    >
+              <div class="row">
+                <div>
+                  <div class="form-group">
+                    <i class="fa-solid fa-envelope"></i>
+                    <input type="text" placeholder="Email Address" id="email" />
                   </div>
-                  <small class="error" id="genderError"></small>
+                  <small class="error" id="emailError"></small>
+                </div>
+
+                <div>
+                  <div class="form-group">
+                    <i class="fa-solid fa-phone"></i>
+                    <input
+                      type="tel"
+                      placeholder="Phone Number"
+                      id="phone"
+                      maxlength="10"
+                    />
+                  </div>
+                  <small class="error" id="phoneError"></small>
+                </div>
+              </div>
+
+              <div class="row">
+                <div>
+                  <label>Date of Birth</label>
+                  <div class="form-group">
+                    <i class="fa-solid fa-calendar"></i>
+                    <input type="date" id="date" />
+                  </div>
+                  <small class="error" id="dateError"></small>
+                </div>
+
+                <div>
+                  <div class="form-group radio-group">
+                    <label>Gender</label>
+                    <div class="gender-class">
+                      <label
+                        ><input type="radio" name="gender" value="male" />
+                        Male</label
+                      >
+                      <label
+                        ><input type="radio" name="gender" value="female" />
+                        Female</label
+                      >
+                      <label
+                        ><input type="radio" name="gender" value="other" />
+                        Other</label
+                      >
+                    </div>
+                    <small class="error" id="genderError"></small>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
 
-          <!-- Education -->
-          <div class="section">
-            <h5>Education</h5>
-            <div>
-              <div class="college-add-container">
-                <div class="form-group">
-                  <i class="fa-solid fa-school"></i>
-                  <select id="school">
-                    <option value="">Select College</option>
-                  </select>
+            <!-- Education -->
+            <div class="section">
+              <h5>Education</h5>
+              <div>
+                <div class="college-add-container">
+                  <div class="form-group">
+                    <i class="fa-solid fa-school"></i>
+                    <select id="school">
+                      <option value="">Select College</option>
+                    </select>
+                  </div>
+                  <button type="button" id="addCollegeBtn">+ Add</button>
                 </div>
-                <button type="button" id="addCollegeBtn">+ Add</button>
+                <small class="error" id="schoolError"></small>
               </div>
-              <small class="error" id="schoolError"></small>
+
+              <div class="row-3">
+                <div>
+                  <div class="form-group">
+                    <i class="fa-solid fa-graduation-cap"></i>
+                    <select id="course">
+                      <option value="">Select Course</option>
+                      <option value="science">Science</option>
+                      <option value="commerce">Commerce</option>
+                      <option value="arts">Arts</option>
+                      <option value="other">Other</option>
+                    </select>
+                  </div>
+                  <small class="error" id="courseError"></small>
+                </div>
+                <div>
+                  <div class="form-group">
+                    <i class="fa-solid fa-calendar"></i>
+                    <input
+                      type="number"
+                      placeholder="Year of Passing"
+                      id="yop"
+                    />
+                  </div>
+                  <small class="error" id="yopError"></small>
+                </div>
+
+                <div>
+                  <div class="form-group">
+                    <i class="fa-solid fa-star"></i>
+                    <input
+                      type="text"
+                      placeholder="Percentage/Grade"
+                      id="grade"
+                    />
+                  </div>
+                  <small class="error" id="gradeError"></small>
+                </div>
+              </div>
             </div>
 
-            <div class="row-3">
+            <!-- Address -->
+            <div class="section">
+              <h5>Address</h5>
               <div>
                 <div class="form-group">
-                  <i class="fa-solid fa-graduation-cap"></i>
-                  <select id="course">
-                    <option value="">Select Course</option>
-                    <option value="science">Science</option>
-                    <option value="commerce">Commerce</option>
-                    <option value="arts">Arts</option>
-                    <option value="other">Other</option>
-                  </select>
-                </div>
-                <small class="error" id="courseError"></small>
-              </div>
-              <div>
-                <div class="form-group">
-                  <i class="fa-solid fa-calendar"></i>
-                  <input type="number" placeholder="Year of Passing" id="yop" />
-                </div>
-                <small class="error" id="yopError"></small>
-              </div>
-
-              <div>
-                <div class="form-group">
-                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-house"></i>
                   <input
                     type="text"
-                    placeholder="Percentage/Grade"
-                    id="grade"
+                    placeholder="Street Address"
+                    id="address"
                   />
                 </div>
-                <small class="error" id="gradeError"></small>
+                <small class="error" id="addressError"></small>
+              </div>
+
+              <div class="row-3">
+                <div>
+                  <div class="form-group">
+                    <i class="fa-solid fa-map-location-dot"></i>
+                    <select id="state">
+                      <option value="">Select an State</option>
+                    </select>
+                  </div>
+                  <small class="error" id="stateError"></small>
+                </div>
+
+                <div>
+                  <div class="form-group">
+                    <i class="fa-solid fa-city"></i>
+                    <select id="city">
+                      <option value="">Select a Distict</option>
+                    </select>
+                  </div>
+                  <small class="error" id="cityError"></small>
+                </div>
+
+                <div>
+                  <div class="form-group">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <input
+                      type="text"
+                      placeholder="Zip / Postal Code"
+                      id="postal-code"
+                      maxlength="6"
+                    />
+                  </div>
+                  <small class="error" id="postal-codeError"></small>
+                </div>
               </div>
             </div>
-          </div>
 
-          <!-- Address -->
-          <div class="section">
-            <h5>Address</h5>
-            <div>
-              <div class="form-group">
-                <i class="fa-solid fa-house"></i>
-                <input type="text" placeholder="Street Address" id="address" />
-              </div>
-              <small class="error" id="addressError"></small>
-            </div>
-
-            <div class="row-3">
+            <!-- Parents -->
+            <div class="section">
+              <h5>Parents / Guardian Details</h5>
               <div>
                 <div class="form-group">
-                  <i class="fa-solid fa-map-location-dot"></i>
-                  <select id="state">
-                    <option value="">Select an State</option>
-                  </select>
-                </div>
-                <small class="error" id="stateError"></small>
-              </div>
-
-              <div>
-                <div class="form-group">
-                  <i class="fa-solid fa-city"></i>
-                  <select id="city">
-                    <option value="">Select a Distict</option>
-                  </select>
-                </div>
-                <small class="error" id="cityError"></small>
-              </div>
-
-              <div>
-                <div class="form-group">
-                  <i class="fa-solid fa-location-dot"></i>
+                  <i class="fa-solid fa-user-tie"></i>
                   <input
                     type="text"
-                    placeholder="Zip / Postal Code"
-                    id="postal-code"
-                    maxlength="6"
+                    placeholder="Father's Name"
+                    id="father-name"
                   />
                 </div>
-                <small class="error" id="postal-codeError"></small>
-              </div>
-            </div>
-          </div>
-
-          <!-- Parents -->
-          <div class="section">
-            <h5>Parents / Guardian Details</h5>
-            <div>
-              <div class="form-group">
-                <i class="fa-solid fa-user-tie"></i>
-                <input
-                  type="text"
-                  placeholder="Father's Name"
-                  id="father-name"
-                />
-              </div>
-              <small class="error" id="father-nameError"></small>
-            </div>
-
-            <div>
-              <div class="form-group">
-                <i class="fa-solid fa-user-tie"></i>
-                <input
-                  type="text"
-                  placeholder="Mother's Name"
-                  id="mother-name"
-                />
-              </div>
-              <small class="error" id="mother-nameError"></small>
-            </div>
-
-            <div class="row">
-              <div>
-                <div class="form-group">
-                  <i class="fa-solid fa-phone"></i>
-                  <input
-                    type="tel"
-                    placeholder="Parent Contact Number"
-                    id="parent-contact"
-                    maxlength="10"
-                  />
-                </div>
-                <small class="error" id="parent-contactError"></small>
+                <small class="error" id="father-nameError"></small>
               </div>
 
               <div>
                 <div class="form-group">
-                  <i class="fa-solid fa-envelope"></i>
+                  <i class="fa-solid fa-user-tie"></i>
                   <input
                     type="text"
-                    placeholder="Parent Email"
-                    id="parent-email"
+                    placeholder="Mother's Name"
+                    id="mother-name"
                   />
                 </div>
-                <small class="error" id="parent-emailError"></small>
+                <small class="error" id="mother-nameError"></small>
+              </div>
+
+              <div class="row">
+                <div>
+                  <div class="form-group">
+                    <i class="fa-solid fa-phone"></i>
+                    <input
+                      type="tel"
+                      placeholder="Parent Contact Number"
+                      id="parent-contact"
+                      maxlength="10"
+                    />
+                  </div>
+                  <small class="error" id="parent-contactError"></small>
+                </div>
+
+                <div>
+                  <div class="form-group">
+                    <i class="fa-solid fa-envelope"></i>
+                    <input
+                      type="text"
+                      placeholder="Parent Email"
+                      id="parent-email"
+                    />
+                  </div>
+                  <small class="error" id="parent-emailError"></small>
+                </div>
+              </div>
+            </div>
+
+            <button type="submit" id="form-btn">Register</button>
+          </form>
+
+          <div>
+            <div class="form-info" id="image-container">
+              <img src="./assets/side.png" alt="Student Illustration" />
+              <div class="form-info-content">
+                <h3>Why Register With Us?</h3>
+
+                <p class="info-text">
+                  Join our academic community and unlock opportunities for
+                  growth, innovation, and success. We provide quality education
+                  with experienced faculty and modern facilities.
+                </p>
+
+                <div class="info-features">
+                  <div class="feature">
+                    <i class="fa-solid fa-book-open"></i>
+                    <span>Industry Relevant Courses</span>
+                  </div>
+
+                  <div class="feature">
+                    <i class="fa-solid fa-chalkboard-user"></i>
+                    <span>Expert Faculty Members</span>
+                  </div>
+
+                  <div class="feature">
+                    <i class="fa-solid fa-laptop-code"></i>
+                    <span>Modern Labs & Smart Classes</span>
+                  </div>
+
+                  <div class="feature">
+                    <i class="fa-solid fa-briefcase"></i>
+                    <span>Career & Placement Support</span>
+                  </div>
+                </div>
+
+                <div class="contact-info">
+                  <p><i class="fa-solid fa-envelope"></i> info@myschool.edu</p>
+                  <p><i class="fa-solid fa-phone"></i> +1 234 567 890</p>
+                </div>
               </div>
             </div>
           </div>
-
-          <button type="submit" id="form-btn">Register</button>
-        </form>
-
-        <div>
-          <div class="form-info" id="image-container">
-            <img src="./assets/side.png" alt="Student Illustration" />
-            <div class="form-info-content">
-              <h3>Why Register With Us?</h3>
-
-              <p class="info-text">
-                Join our academic community and unlock opportunities for growth,
-                innovation, and success. We provide quality education with
-                experienced faculty and modern facilities.
-              </p>
-
-              <div class="info-features">
-                <div class="feature">
-                  <i class="fa-solid fa-book-open"></i>
-                  <span>Industry Relevant Courses</span>
-                </div>
-
-                <div class="feature">
-                  <i class="fa-solid fa-chalkboard-user"></i>
-                  <span>Expert Faculty Members</span>
-                </div>
-
-                <div class="feature">
-                  <i class="fa-solid fa-laptop-code"></i>
-                  <span>Modern Labs & Smart Classes</span>
-                </div>
-
-                <div class="feature">
-                  <i class="fa-solid fa-briefcase"></i>
-                  <span>Career & Placement Support</span>
-                </div>
-              </div>
-
-              <div class="contact-info">
-                <p><i class="fa-solid fa-envelope"></i> info@myschool.edu</p>
-                <p><i class="fa-solid fa-phone"></i> +1 234 567 890</p>
-              </div>
-            </div>
+        </main>
+        <section id="data-field">
+          <div class="" id="show-container">
+            <table class="info-table" id="studentTable">
+              <caption>
+                Registered Students
+              </caption>
+              <thead>
+                <tr>
+                  <th>Name</th>
+                  <th>Email</th>
+                  <th>Phone</th>
+                  <th>DOB</th>
+                  <th>Gender</th>
+                  <th>College</th>
+                  <th>Course</th>
+                  <th>YOP</th>
+                  <th>Grade</th>
+                  <th>Distict</th>
+                  <th>State</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tbody id="studentTableBody">
+                <!-- Students will appear here -->
+              </tbody>
+              <tfoot>
+                <tr>
+                  <td colspan="12">
+                  <div id="nodata">No data found</div>
+                  </td>
+                </tr>
+              </tfoot>
+            </table>
           </div>
+        </section>
+      </div>
+
+      <div class="floating-btn" id="floating-btn"></div>
+      <div id="toast" class="toast">
+        <div class="toast-icon">✔</div>
+        <div class="toast-content">
+          <p class="toast-title">Success</p>
+          <p class="toast-message">Form submitted successfully</p>
         </div>
-      </main>
-      <section id="data-field">
-        <div class="" id="show-container">
-          <table class="info-table" id="studentTable">
-            <caption>
-              Registered Students
-            </caption>
-            <thead>
-              <tr>
-                <th>Name</th>
-                <th>Email</th>
-                <th>Phone</th>
-                <th>DOB</th>
-                <th>Gender</th>
-                <th>College</th>
-                <th>Course</th>
-                <th>YOP</th>
-                <th>Grade</th>
-                <th>Distict</th>
-                <th>State</th>
-                <th>Action</th>
-              </tr>
-            </thead>
-            <tbody id="studentTableBody">
-              <!-- Students will appear here -->
-            </tbody>
-          </table>
-          <div id="nodata">No data found</div>
-        </div>
-      </section>
-    </div>
-
-    <div class="floating-btn" id="floating-btn"></div>
-    <div id="toast" class="toast">
-      <div class="toast-icon">✔</div>
-      <div class="toast-content">
-        <p class="toast-title">Success</p>
-        <p class="toast-message">Form submitted successfully</p>
       </div>
     </div>
-</div>
     <script src="./script.js"></script>
     <script src="./distict.js"></script>
   </body>
