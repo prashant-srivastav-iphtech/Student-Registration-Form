@@ -6,6 +6,7 @@ let inputField = document.getElementById("input-field");
 let dataField = document.getElementById("data-field");
 let floatingBtn = document.getElementById("floating-btn");
 let nodata = document.getElementById("nodata");
+let formBtn = document.getElementById("form-btn");
 showData(type);
 
 document.getElementById("form-reg").addEventListener("submit", function (e) {
@@ -103,7 +104,7 @@ document.getElementById("form-reg").addEventListener("submit", function (e) {
 
   if (grade === "") {
     setError("grade", "Grade required");
-  } else if (!gradePattern.test(grade) || grade > 100) {
+  } else if (!gradePattern.test(Number(grade)) || Number(grade) > 100) {
     setError("grade", "Enter valid percentage (0-100)");
   }
 
@@ -112,11 +113,11 @@ document.getElementById("form-reg").addEventListener("submit", function (e) {
   }
 
   if (city === "" || !namePattern.test(city)) {
-    setError("city", "Enter valid city name");
+    setError("city", "Select valid distict name");
   }
 
   if (state === "" || !namePattern.test(state)) {
-    setError("state", "Enter valid state name");
+    setError("state", "Select valid state name");
   }
 
   if (postalCode === "") {
@@ -182,6 +183,7 @@ document.getElementById("form-reg").addEventListener("submit", function (e) {
     students[editIndex] = studentData;
     editIndex = -1;
     showToast("Success", "Application updated successfully");
+    formBtn.innerText = editIndex === -1 ? "Register" : "Update";
   }
 
   document.getElementById("form-reg").reset();
@@ -229,7 +231,6 @@ function editStudent(index) {
   }
 
   showData("form");
-
   window.scrollTo({ top: 0, behavior: "smooth" });
 }
 
@@ -348,6 +349,7 @@ function showData(t) {
   }
   type = t;
   renderNoData();
+  formBtn.innerText = editIndex === -1 ? "Register" : "Update";
 }
 
 function renderNoData() {
