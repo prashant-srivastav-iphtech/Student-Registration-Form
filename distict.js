@@ -11,6 +11,10 @@ fetch("./assets/data/district-master.csv")
     const stateDropdown = document.getElementById("state");
     const districtDropdown = document.getElementById("city");
 
+    // Default empty options
+    stateDropdown.add(new Option("Select State", ""));
+    districtDropdown.add(new Option("Select District", ""));
+
     const states = [...new Set(dataset.map((d) => d.state))];
 
     states.forEach((s) => {
@@ -20,6 +24,9 @@ fetch("./assets/data/district-master.csv")
 
     stateDropdown.addEventListener("change", function () {
       districtDropdown.innerHTML = "";
+
+      // Reset district dropdown with empty option
+      districtDropdown.add(new Option("Select District", ""));
 
       const filtered = dataset.filter((d) => d.state === this.value);
 
