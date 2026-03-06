@@ -382,7 +382,6 @@ select.error-border {
   background-color: #f2f2f2;
 }
 
-
 .toast{
     position: fixed;
     bottom: 30px;
@@ -469,7 +468,6 @@ caption{
     border-radius: 50%;
     cursor: pointer;
 }
-
 
 #nodata{
     display: flex;
