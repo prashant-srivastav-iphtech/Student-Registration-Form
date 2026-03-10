@@ -272,10 +272,6 @@ function deleteStudent(index) {
   }
 }
 
-// ----------------------------
-// College - System
-// ----------------------------
-
 const collegeSelect = document.getElementById("school");
 const addCollegeBtn = document.getElementById("addCollegeBtn");
 
