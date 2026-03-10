@@ -310,6 +310,10 @@ button:hover {
     .form-info {
         width: 100%;
     }
+
+    .right-side {
+        display: none;
+    }
 }
 
 .section h5 {
