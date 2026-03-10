@@ -411,13 +411,11 @@ function validateField(id) {
 
     case "gender":
       const gender = document.querySelector('input[name="gender"]:checked');
-
       if (!gender) {
         errorElement.textContent = "Please select a gender";
       } else {
         errorElement.textContent = "";
       }
-
       break;
 
     case "school":
@@ -435,7 +433,7 @@ function validateField(id) {
     case "yop":
       if (!value) {
         errorElement.textContent = "Year required";
-      } else if (value < 1950 || value > currentYear) {
+      } else if (Number(value) < 1950 || Number(value) > currentYear) {
         errorElement.textContent = "Enter valid year";
       }
       break;
@@ -443,7 +441,7 @@ function validateField(id) {
     case "grade":
       if (!value) {
         errorElement.textContent = "Grade required";
-      } else if (!gradePattern.test(value) || value > 100) {
+      } else if (!gradePattern.test(Number(value)) || Number(value) > 100) {
         errorElement.textContent = "Enter valid percentage";
       }
       break;
@@ -491,6 +489,8 @@ function validateField(id) {
         errorElement.textContent = "Parent phone required";
       } else if (!phonePattern.test(value)) {
         errorElement.textContent = "Enter valid parent phone";
+      } else if (value === document.getElementById("phone").value.trim()) {
+        errorElement.textContent = "Parent phone cannot match student phone";
       }
       break;
     case "parent-email":
@@ -498,6 +498,8 @@ function validateField(id) {
         errorElement.textContent = "Parent email required";
       } else if (!emailPattern.test(value)) {
         errorElement.textContent = "Enter valid parent email";
+      } else if (value === document.getElementById("email").value.trim()) {
+        errorElement.textContent = "Parent email cannot match student email";
       }
       break;
   }
