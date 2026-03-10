@@ -355,3 +355,190 @@ function showData(t) {
 function renderNoData() {
   nodata.style.display = students.length > 0 ? "none" : "flex";
 }
+
+function validateField(id) {
+  const el = document.getElementById(id);
+  const value = el?.value.trim();
+  const errorElement = document.getElementById(id + "Error");
+
+  if (!errorElement) return;
+
+  errorElement.textContent = "";
+  el.classList.remove("error-border");
+
+  let namePattern = /^[A-Za-z ]{3,50}$/;
+  let emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+  let phonePattern = /^[6-9][0-9]{9}$/;
+  let postalPattern = /^[0-9]{6}$/;
+  let gradePattern = /^(\d{1,2}(\.\d{1,2})?|100)$/;
+
+  let currentYear = new Date().getFullYear();
+
+  switch (id) {
+    case "name":
+      if (!value) {
+        errorElement.textContent = "Full name required";
+      } else if (value.length < 3 || value.length > 50) {
+        errorElement.textContent = "Only 3-50 characters allowed";
+      } else if (!namePattern.test(value)) {
+        errorElement.textContent = "Only letters allowed";
+      }
+      break;
+
+    case "email":
+      if (!value) {
+        errorElement.textContent = "Email required";
+      } else if (!emailPattern.test(value)) {
+        errorElement.textContent = "Enter valid email";
+      }
+      break;
+
+    case "phone":
+      if (!value) {
+        errorElement.textContent = "Phone required";
+      } else if (!phonePattern.test(value)) {
+        errorElement.textContent = "Enter valid 10 digit number";
+      }
+      break;
+
+    case "date":
+      if (!value) {
+        errorElement.textContent = "DOB required";
+      } else {
+        let birthDate = new Date(value);
+        let age = new Date().getFullYear() - birthDate.getFullYear();
+        if (age < 15) {
+          errorElement.textContent = "Minimum age should be 15";
+        }
+      }
+      break;
+
+    case "gender":
+      const gender = document.querySelector('input[name="gender"]:checked');
+
+      if (!gender) {
+        errorElement.textContent = "Please select a gender";
+      } else {
+        errorElement.textContent = "";
+      }
+
+      break;
+
+    case "school":
+      if (value === "") {
+        errorElement.textContent = "Select college";
+      }
+      break;
+
+    case "course":
+      if (value === "") {
+        errorElement.textContent = "Select course";
+      }
+      break;
+
+    case "yop":
+      if (!value) {
+        errorElement.textContent = "Year required";
+      } else if (value < 1950 || value > currentYear) {
+        errorElement.textContent = "Enter valid year";
+      }
+      break;
+
+    case "grade":
+      if (!value) {
+        errorElement.textContent = "Grade required";
+      } else if (!gradePattern.test(value) || value > 100) {
+        errorElement.textContent = "Enter valid percentage";
+      }
+      break;
+
+    case "address":
+      if (value.length < 5) {
+        errorElement.textContent = "Address too short";
+      }
+      break;
+
+    case "city":
+      if (value === "") {
+        errorElement.textContent = "Select district";
+      }
+      break;
+
+    case "state":
+      if (value === "") {
+        errorElement.textContent = "Select state";
+      }
+      break;
+
+    case "postal-code":
+      if (!value) {
+        errorElement.textContent = "Postal code required";
+      } else if (!postalPattern.test(value)) {
+        errorElement.textContent = "Postal code must be 6 digits";
+      }
+      break;
+
+    case "father-name":
+      if (!namePattern.test(value)) {
+        errorElement.textContent = "Enter valid father name";
+      }
+      break;
+
+    case "mother-name":
+      if (!namePattern.test(value)) {
+        errorElement.textContent = "Enter valid mother name";
+      }
+      break;
+
+    case "parent-contact":
+      if (!value) {
+        errorElement.textContent = "Parent phone required";
+      } else if (!phonePattern.test(value)) {
+        errorElement.textContent = "Enter valid parent phone";
+      }
+      break;
+    case "parent-email":
+      if (!value) {
+        errorElement.textContent = "Parent email required";
+      } else if (!emailPattern.test(value)) {
+        errorElement.textContent = "Enter valid parent email";
+      }
+      break;
+  }
+
+  if (errorElement.textContent !== "") {
+    el.classList.add("error-border");
+  }
+}
+
+function debounce(fn, delay = 400) {
+  let timer;
+  return function (...args) {
+    clearTimeout(timer);
+    timer = setTimeout(() => fn.apply(this, args), delay);
+  };
+}
+
+const debouncedValidate = debounce(function (id) {
+  validateField(id);
+}, 400);
+
+document.querySelectorAll("input, select").forEach((el) => {
+  el.addEventListener("input", function () {
+    debouncedValidate(this.id);
+  });
+
+  el.addEventListener("blur", function () {
+    validateField(this.id);
+  });
+
+  el.addEventListener("change", function () {
+    validateField(this.id);
+  });
+});
+
+document.querySelectorAll('input[name="gender"]').forEach((radio) => {
+  radio.addEventListener("change", () => {
+    validateField("gender");
+  });
+});

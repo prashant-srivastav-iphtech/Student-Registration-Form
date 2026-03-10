@@ -25,7 +25,7 @@
                   <i class="fa-solid fa-user"></i>
                   <input type="text" placeholder="Full Name" id="name" />
                 </div>
-                <small class="error" id="nameError"></small>
+                <small class="error" id="nameError"> </small>
               </div>
 
               <div class="row">
@@ -34,7 +34,7 @@
                     <i class="fa-solid fa-envelope"></i>
                     <input type="text" placeholder="Email Address" id="email" />
                   </div>
-                  <small class="error" id="emailError"></small>
+                  <small class="error" id="emailError"> </small>
                 </div>
 
                 <div>
@@ -121,6 +121,7 @@
                       type="number"
                       placeholder="Year of Passing"
                       id="yop"
+                      maxlength="4"
                     />
                   </div>
                   <small class="error" id="yopError"></small>
@@ -130,9 +131,10 @@
                   <div class="form-group">
                     <i class="fa-solid fa-star"></i>
                     <input
-                      type="text"
+                      type="number"
                       placeholder="Percentage/Grade"
                       id="grade"
+                      maxlength="3"
                     />
                   </div>
                   <small class="error" id="gradeError"></small>
